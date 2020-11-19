@@ -1,0 +1,23 @@
+{
+  "name": "hello_express",
+  "version": "1.0.0",
+  "description": "About Express",
+  "main": "app.js",
+  "dependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeRepositoryForMe/Hello_Express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeRepositoryForMe/Hello_Express/issues"
+  },
+  "homepage": "https://github.com/CodeRepositoryForMe/Hello_Express#readme"
+}
