@@ -2,7 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.use('/user',(req,res,next) =>{
+// Route : user/registration
+router.use('/registration',(req,res,next) =>{
     console.log("This is user !!!");
     res.send("<h1>This users page</h1>")
 })
