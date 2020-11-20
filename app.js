@@ -3,6 +3,11 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const adminRouter = require("./routes/admin");
+const shopRouter = require("./routes/shop");
+const userRouter = require("./routes/user");
+const defaultRoute = require("./routes/default");
+
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -13,30 +18,10 @@ app.use('/',(req, res, next) => {
     next();
 });
 
-app.use('/catelog',(req, res, next) =>{
-    console.log("This is catelog !!!");
-    res.send("<h1>Product catelog page</h1>");
-});
-
-app.post(('/product'),(req,res,next)=>{
-    console.log("Product Added !!!");
-    res.redirect("/catelog");
-});
-
-app.use(('/product'), (req, res, next) => {
-    console.log("This is product page!!!");
-    res.send('<form method="POST", action="./product"><input type="Text" name="Title"><button type="Submit">Add product</button></form>');
-});
-
-app.use('/user',(req,res,next) =>{
-    console.log("This is user !!!");
-    res.send("<h1>This users page</h1>")
-})
-
-app.use('/',(req,res,next) => {
-    console.log("This is for default route");
-    res.send("<h1> This is from Express for default route</h1>")
-});
+app.use(adminRouter);
+app.use(shopRouter);
+app.use(userRouter);
+app.use(defaultRoute);
 
 const server = http.createServer(app);
 
