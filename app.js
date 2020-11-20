@@ -18,9 +18,14 @@ app.use('/catelog',(req, res, next) =>{
     res.send("<h1>Product catelog page</h1>");
 });
 
+app.post(('/product'),(req,res,next)=>{
+    console.log("Product Added !!!");
+    res.redirect("/catelog");
+});
+
 app.use(('/product'), (req, res, next) => {
     console.log("This is product page!!!");
-    res.send('<form method="POST", action="./catelog"><input type="Text" name="Title"><button type="Submit">Add product</button></form>');
+    res.send('<form method="POST", action="./product"><input type="Text" name="Title"><button type="Submit">Add product</button></form>');
 });
 
 app.use('/user',(req,res,next) =>{
