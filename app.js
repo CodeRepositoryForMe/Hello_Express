@@ -23,7 +23,7 @@ app.use('/',(req, res, next) => {
     next();
 });
 
-app.use(adminRouter);
+app.use(adminRouter.routes);
 app.use(shopRouter);
 app.use('/user/',userRouter);
 app.use(defaultRoute);

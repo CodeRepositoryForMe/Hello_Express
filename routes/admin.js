@@ -6,11 +6,14 @@ const router = express.Router();
 
 const rootPath = require('../util/path');
 
+const products = []
 
 router.post(('/product'),(req,res,next)=>{
     console.log("Product Added !!!");
     //res.redirect("/catelog");
-    res.sendFile(path.join(rootPath,'views','catelog.html'));
+    products.push(req.title);
+    console.log("From Add Product " + products);
+    res.sendFile(path.join(rootPath,'views','catelog.html'));  
 });
 
 router.use(('/product'), (req, res, next) => {
@@ -19,4 +22,6 @@ router.use(('/product'), (req, res, next) => {
     res.sendFile(path.join(rootPath,'views','addproduct.html'));
 });
 
-module.exports = router;
+//module.exports = router;
+exports.routes = router;
+exports.products = products;

@@ -3,8 +3,9 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title #{doctTitle}
         link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/product.css")
     body
         header.main-header
             nav.mail-header_nav
@@ -13,3 +14,15 @@ html(lang="en")
                         a.active(href="/") Shop
                     li.main-header__item
                         a(href="/product") Add Product    
+        main
+            .grid
+            article.card.product-item
+                header.card__header
+                    h1.product__title Grate Book
+                .card__image
+                    img(src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F90946%2Fpexels-photo-90946.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fproduct%2F&tbnid=yOeqW9GPz0F9cM&vet=12ahUKEwjc_cShpbDtAhXJAbcAHaJwDBkQMygAegUIARDTAQ..i&docid=nMjIODhQZ_AKUM&w=500&h=331&q=product%20image&ved=2ahUKEwjc_cShpbDtAhXJAbcAHaJwDBkQMygAegUIARDTAQ", alt="Headset")
+                .card__content
+                    h2.product__price 20
+                    p.product.description Nice product         
+                .card__action
+                    button.btn Add To Cart    
