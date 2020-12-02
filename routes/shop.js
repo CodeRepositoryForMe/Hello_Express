@@ -8,7 +8,8 @@ const router = express.Router();
 
 router.use('/catelog',(req, res, next) =>{
     console.log("This is catelog !!!");
-    res.sendFile(path.join(rootPath,'views','catelog.html'));
+    //res.sendFile(path.join(rootPath,'views','catelog.html'));
+    res.render('shop');
 });
 
 module.exports = router;
