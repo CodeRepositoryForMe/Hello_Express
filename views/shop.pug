@@ -15,14 +15,17 @@ html(lang="en")
                     li.main-header__item
                         a(href="/product") Add Product    
         main
-            .grid
-            article.card.product-item
-                header.card__header
-                    h1.product__title Grate Book
-                .card__image
-                    img(src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F90946%2Fpexels-photo-90946.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D1%26w%3D500&imgrefurl=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fproduct%2F&tbnid=yOeqW9GPz0F9cM&vet=12ahUKEwjc_cShpbDtAhXJAbcAHaJwDBkQMygAegUIARDTAQ..i&docid=nMjIODhQZ_AKUM&w=500&h=331&q=product%20image&ved=2ahUKEwjc_cShpbDtAhXJAbcAHaJwDBkQMygAegUIARDTAQ", alt="Headset")
-                .card__content
-                    h2.product__price 20
-                    p.product.description Nice product         
-                .card__action
-                    button.btn Add To Cart    
+            h1 Hello
+            if prods.length > 0
+                .grid
+                    each product in prods
+                        article.card.product-item
+                            header.card__header
+                                h1.product__title #{product.title}
+                            .card__image
+                                img(src= "https://elcopcbonline.com/photos/product/4/176/4.jpg", alt= "/#{product.title}")
+                            .card__content
+                                h2.product__price #{product.cost}
+                                p.product.description #{product.description}       
+                            .card__action
+                                button.btn Add To Cart    
