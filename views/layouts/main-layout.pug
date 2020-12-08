@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Page Not Found
+        link(rel="stylesheet", href="/css/main.css")
+        block style
+    body
+        header.main-header
+            nav.mail-header_nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/catelog", class=(pageName==='catelog' ? 'active' : '')) Shop
+                    li.main-header__item
+                        a(href="/product", class=(pageName==='product' ? 'active' : '')) Add Product 
+        block content

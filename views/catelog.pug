@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{doctTitle}
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/product.css")
-    body
-        header.main-header
-            nav.mail-header_nav
-                ul.main-header__item-list
-                    li.main-header__item
-                        a.active(href="/catelog") Shop
-                    li.main-header__item
-                        a(href="/product") Add Product    
-        main
-            h1 Hello
-            if prods.length > 0
-                .grid
-                    each product in prods
-                        article.card.product-item
-                            header.card__header
-                                h1.product__title #{product.title}
-                            .card__image
-                                img(src= product.url, alt= "/#{product.title}")
-                            .card__content
-                                h2.product__price #{product.cost}
-                                p.product.description #{product.description}       
-                            .card__action
-                                button.btn Add To Cart  
-            else
-                h1 No Products found   
+extends layouts/main-layout.pug
+block style
+    link(rel="stylesheet", href="/css/product.css")
+block content
+    main
+        h1 Hello
+        if prods.length > 0
+            .grid
+                each product in prods
+                    article.card.product-item
+                        header.card__header
+                            h1.product__title #{product.title}
+                        .card__image
+                            img(src= product.url, alt= "/#{product.title}")
+                        .card__content
+                            h2.product__price #{product.cost}
+                            p.product.description #{product.description}       
+                        .card__action
+                            button.btn Add To Cart  
+        else
+            h1 No Products found   
