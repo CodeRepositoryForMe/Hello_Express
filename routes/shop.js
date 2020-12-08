@@ -13,7 +13,7 @@ router.use('/catelog',(req, res, next) =>{
     //res.sendFile(path.join(rootPath,'views','catelog.html'));
     const products = adminRoute.products;
     console.log("Product list" + products);
-    res.render('shop',{prods:products, doctTitle:"Shopping Catalog"});
+    res.render('catelog',{prods:products, doctTitle:"Shopping Catalog"});
 });
 
 module.exports = router;
