@@ -3,6 +3,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const expressHbs = require('express-handlebars');
 
 const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
@@ -11,8 +12,9 @@ const defaultRoute = require("./routes/default");
 
 const app = express();
 
-app.set('view engine','pug');
-app.set('views','views');
+app.engine('hbs', expressHbs({defaultLayout: false}));
+app.set('view engine','hbs');
+app.set('views',path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public')));
