@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="/css/main.css"> 
+</head>
+<body class="body">
+    <header class="main-header">
+        <nav class = "mail-header_nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a class="active" href="/catelog">Product Catelog</a></li>
+                <li class="main-header__item"><a href="/product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <% if(prods.length > 0 ) { %>
+            <div class="grid">
+                <% for (let product of prods) { %>
+                    <article class="card product-item">
+                        <div class="card__header">
+                            <h1 class="product__title"><%= product.title %></h1>
+                        </div>
+                        <div class="card__image">
+                            <img src="<%= product.url %>" alt="<%= product.title %>">
+                        </div>
+                        <div class="card__content">
+                            <h2 class="product__price"><%= product.cost %></h2>
+                            <p class="product.description"><%= product.description %></p>
+                        </div>
+                        <div class="card__action">
+                            <button class="btn" type="submit">Add To Cart</button>      
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } %>    
+    </main>
+</body>
+</html>

@@ -3,6 +3,8 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+
+//For express-handlebars
 const expressHbs = require('express-handlebars');
 
 const adminRouter = require("./routes/admin");
@@ -11,10 +13,19 @@ const userRouter = require("./routes/user");
 const defaultRoute = require("./routes/default");
 
 const app = express();
+// For pub
+// app.set('view engine','pub');
+// app.set('views',path.join(__dirname, 'views'));
 
-app.engine('hbs', expressHbs({layoutsDir:'views/layouts', defaultLayout: 'main-layout', extname:"hbs"}));
-app.set('view engine','hbs');
+// For express-handlebars
+// app.engine('hbs', expressHbs({layoutsDir:'views/layouts', defaultLayout: 'main-layout', extname:"hbs"}));
+// app.set('view engine','hbs');
+// app.set('views',path.join(__dirname, 'views'));
+
+// For ejs
+app.set('view engine','ejs');
 app.set('views',path.join(__dirname, 'views'));
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public')));
