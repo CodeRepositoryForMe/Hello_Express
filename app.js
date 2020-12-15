@@ -12,7 +12,7 @@ const defaultRoute = require("./routes/default");
 
 const app = express();
 
-app.engine('hbs', expressHbs({defaultLayout: false}));
+app.engine('hbs', expressHbs({layoutsDir:'views/layouts', defaultLayout: 'main-layout', extname:"hbs"}));
 app.set('view engine','hbs');
 app.set('views',path.join(__dirname, 'views'));
 
