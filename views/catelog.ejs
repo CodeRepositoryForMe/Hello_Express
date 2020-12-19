@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="/css/main.css"> 
+<%- include('includes/head.ejs') %>
 </head>
 <body class="body">
     <header class="main-header">
-        <nav class = "mail-header_nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="active" href="/catelog">Product Catelog</a></li>
-                <li class="main-header__item"><a href="/product">Add Product</a></li>
-            </ul>
-        </nav>
+        <%- include('includes/navigation.ejs') %>
     </header>
     <main>
         <% if(prods.length > 0 ) { %>
@@ -36,7 +25,8 @@
                     </article>
                 <% } %>
             </div>
+            <% } else {%>
+                <h1>No product found</h1>
         <% } %>    
     </main>
-</body>
-</html>
+<%- include('includes/end.ejs') %>
